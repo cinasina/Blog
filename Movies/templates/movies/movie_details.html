@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Movie Details
+{% endblock %}
+
+{% block context %}
+    {% for each in details %}
+        Name : {{ each.title}}
+        <br>
+        Year : {{ each.year }}
+        <br>
+        Genres : {{ each.genres }}
+        <br>
+        Director : {{ each.director }}
+        <br>
+        Stars : {{ each.stars }}
+        <br>
+        Rate : {{ each.rate }}
+        <br>
+        Certificated Parents Guide : {{ each.certificate }}
+        <br>
+        Story Line : {{ each.storyline|safe }}
+    {% endfor %}
+{% endblock %}
+
+{% block navbar %}
+ {% include 'navbar.html' %}
+{% endblock %}
