@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block navbar %}
+ {% include 'navbar.html' %}
+{% endblock %}
+
+{% block context %}
+<h2 class="mb-5 tm-content-title">
+    What Are<br>Artificial Intelligence<br>Machine Learning<br>Deep Learning?
+</h2>
+<p class="mb-5">
+    Artificial intelligence (AI), machine learning and deep learning are three terms often used interchangeably to describe software that behaves intelligently. However, it is useful to understand the key distinctions among them.
+    You can think of deep learning, machine learning and artificial intelligence as a set of Russian dolls nested within each other, beginning with the smallest and working out. Deep learning is a subset of machine learning, and machine learning is a subset of AI, which is an umbrella term for any computer program that does something smart. In other words, all machine learning is AI, but not all AI is machine learning, and so forth.
+</p>
+<hr class="mb-5">
+<p class="mb-5">
+    <img src="{% static "home/img/John_McCarthy.jpg" %}" alt="John McCarthy">
+<br>
+John McCarthy, widely recognized as one of the godfathers of AI, defined it as “the science and engineering of making intelligent machines.
+</p>
+<a href="{% url "John" %}" class="btn btn-primary">Continue...</a>
+{% endblock %}
