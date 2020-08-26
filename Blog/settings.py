@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'Home.apps.HomeConfig',
     'Accounts.apps.AccountsConfig',
     'Movies.apps.MoviesConfig',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -122,3 +124,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static/')
+]
+
+# Upload Media File Here
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_URL = '/media/'
+
+# Configuration CK-EDITOR Uploader
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+# Configuration CK-EDITOR
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full'
+    },
+}
