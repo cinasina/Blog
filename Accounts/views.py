@@ -15,7 +15,7 @@ def user_login(request):
             if user is not None:
                 login(request, user)
                 messages.success(request, 'You Are Successfully Logged In. ', 'success')
-                return redirect(to='home')
+                return redirect(to='home:home')
     else:
         form = UserLoginForm()
     return render(request, 'accounts/login.html', {'form': form})
@@ -28,7 +28,7 @@ def user_register(request):
             cd = form.cleaned_data
             User.objects.create_user(cd['username'], cd['email'], cd['password1'])
             messages.success(request, 'Congrats Your Account Is Created!', 'success')
-            return redirect(to='login')
+            return redirect(to='accounts:login')
     else:
         form = UserRegisterForm()
     return render(request, 'accounts/register.html', {'form': form})
@@ -37,5 +37,5 @@ def user_register(request):
 def user_logout(request):
     logout(request)
     messages.success(request, 'Thank You For Spending Some Quality Time With My Blog Today.', 'success')
-    return redirect(to='home')
+    return redirect(to='home:home')
 
